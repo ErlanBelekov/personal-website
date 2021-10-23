@@ -11,7 +11,11 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ colors });
+const fonts = {
+  inconsalata: 'Inconsalata',
+};
+
+const theme = extendTheme({ colors, fonts });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

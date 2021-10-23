@@ -1,4 +1,4 @@
-import { Text, Box } from '@chakra-ui/react';
+import { Text, Box, Link, Flex, Avatar } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 
 import Header from '../components/Header';
@@ -8,19 +8,26 @@ const Home: NextPage = () => {
   return (
     <PageContainer>
       <Header />
-      <Box px={['0', '4', '16', '32']} py={10}>
+      <Box px={['0', '4', '16', '25vw']}>
         <Text
           bgGradient="linear(to-l, #7928CA, #FF0080)"
           bgClip="text"
-          fontSize="6xl"
+          fontSize="4xl"
           fontWeight="extrabold"
         >
-          Hi, I&apos;m Erlan.
+          Erlan Belekov
         </Text>
-        {/* color="bisque" */}
-        <Text fontSize="6xl" fontWeight="extrabold">
-          I am a software engineer, and this should be some useful description.{' '}
-          <br />
+        <Text fontSize="2xl" fontWeight="bold">
+          Hey There!
+          <br /> My name is Erlan, and I am a full-stack software engineer at{' '}
+          <Link isExternal href="https://www.brilliantconsulting.dev/">
+            Brilliant Consulting
+          </Link>
+          . I also write blog posts about tech and make video courses(in
+          progress). <br /> I love eating unhealthy food, playing games(Witcher
+          3 and Chess) and sleeping zZzZ😴 <br />
+          And since you&apos;re here, check out projects that I&apos;ve worked
+          on or my articles!
         </Text>
       </Box>
     </PageContainer>

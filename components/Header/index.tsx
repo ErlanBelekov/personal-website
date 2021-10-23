@@ -20,7 +20,14 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { FaGithub, FaHammer, FaMoon, FaSun, FaTwitter } from 'react-icons/fa';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaHammer,
+  FaMoon,
+  FaSun,
+  FaTwitter,
+} from 'react-icons/fa';
 
 const links = [
   {
@@ -100,7 +107,7 @@ function Header() {
         py={4}
         alignItems="center"
         justifyContent="space-between"
-        px={['0', '4', '16', '32']}
+        px={['0', '4', '16', '25vw']}
       >
         <IconButton
           size="md"
@@ -121,6 +128,21 @@ function Header() {
               transition="color 0.2s"
               _hover={{ color: 'gray.600' }}
               icon={<FaGithub />}
+            />
+          </Link>
+          <Link
+            isExternal
+            href="https://www.linkedin.com/in/erlan-belekov-413435168/"
+          >
+            <IconButton
+              size="md"
+              fontSize="lg"
+              aria-label={`LinkedIn`}
+              variant="ghost"
+              color="current"
+              transition="color 0.2s"
+              _hover={{ color: 'gray.600' }}
+              icon={<FaLinkedin />}
             />
           </Link>
           <Link isExternal href="https://twitter.com/erlan_belekov">
