@@ -1,121 +1,36 @@
-import { useRef } from 'react';
 import {
-  Drawer,
-  DrawerBody,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerHeader,
-  DrawerCloseButton,
   Flex,
   IconButton,
   Link,
-  Tag,
-  Icon,
-  TagLabel,
   Text,
   Box,
   HStack,
   useColorMode,
   useColorModeValue,
-  useDisclosure,
 } from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
-import {
-  FaGithub,
-  FaLinkedin,
-  FaHammer,
-  FaMoon,
-  FaSun,
-  FaTwitter,
-} from 'react-icons/fa';
-
-const links = [
-  {
-    text: 'Home',
-    link: '/',
-    isWIP: false,
-  },
-  {
-    text: 'Projects',
-    link: '/projects',
-    isWIP: true,
-  },
-  {
-    text: 'Articles',
-    link: '/articles',
-    isWIP: true,
-  },
-  {
-    text: 'Courses',
-    link: '/courses',
-    isWIP: true,
-  },
-];
+import { FaGithub, FaLinkedin, FaMoon, FaSun, FaTwitter } from 'react-icons/fa';
 
 function Header() {
   const { toggleColorMode: toggleMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = useRef<any>();
 
   const SwitchIcon = useColorModeValue(FaMoon, FaSun);
 
   return (
     <>
-      <Drawer
-        isOpen={isOpen}
-        placement="left"
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-
-          <DrawerHeader></DrawerHeader>
-
-          <DrawerBody>
-            {links.map((link) => {
-              return (
-                <Link
-                  href={link.link}
-                  key={link.text}
-                  d="flex"
-                  justifyContent="space-between"
-                  alignItems="center"
-                  style={{
-                    textDecoration: 'none',
-                  }}
-                  py={2}
-                >
-                  <Text fontWeight="bold" fontSize="2xl">
-                    {link.text}
-                  </Text>
-                  {link.isWIP && (
-                    <Tag size="lg">
-                      <TagLabel>
-                        <Icon as={FaHammer} />
-                      </TagLabel>
-                    </Tag>
-                  )}
-                </Link>
-              );
-            })}
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
       <Flex
         py={4}
         alignItems="center"
         justifyContent="space-between"
         px={['0', '4', '16', '25vw']}
       >
-        <IconButton
-          size="md"
-          fontSize="lg"
-          aria-label={`Open navigation menu`}
-          icon={<HamburgerIcon />}
-          onClick={onOpen}
-        />
+        <Text
+          bgGradient="linear(to-l, #7928CA, #FF0080)"
+          bgClip="text"
+          fontSize="4xl"
+          fontWeight="extrabold"
+        >
+          Erlan Belekov
+        </Text>
         <Box />
         <HStack spacing={1} d="flex" alignItems="center">
           <Link isExternal href="https://github.com/ErlanBelekov">
